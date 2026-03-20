@@ -1,0 +1,127 @@
+# 🌫️ AQI Prediction using Random Forest Regression
+
+## 📌 Overview
+
+This project focuses on predicting the **Air Quality Index (AQI)** for Noida using machine learning techniques.
+A **Random Forest Regression model** is used to analyze historical AQI data along with pollutant levels to make accurate predictions and forecast future AQI values.
+
+---
+
+## 📊 Dataset
+
+The dataset contains daily AQI values along with pollutant data:
+
+* AQI
+* PM2.5
+* NO2
+* CO
+* O3
+* Date
+
+Additional features were created:
+
+* AQI_lag1 (previous day AQI)
+* AQI_lag2 (2-day previous AQI)
+
+---
+
+## ⚙️ Methodology
+
+### 1. Data Preprocessing
+
+* Converted Date column to datetime format
+* Sorted data chronologically
+* Created lag features using `shift()`
+* Removed missing values using `dropna()`
+
+### 2. Feature Engineering
+
+* Lag features were added to capture temporal dependency
+* These features help the model learn patterns from past AQI values
+
+### 3. Model Training
+
+* Used **Random Forest Regressor**
+* Split data into training and testing sets
+* Trained model on pollutant + lag features
+
+---
+
+## 🤖 Model Used
+
+* Random Forest Regression
+* Handles non-linear relationships effectively
+* Suitable for environmental data prediction
+
+---
+
+## 📈 Evaluation Metrics
+
+The model performance was evaluated using:
+
+* R² Score
+* Correlation Coefficient (r)
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+
+---
+
+## 📉 Visualizations
+
+The project includes:
+
+* Actual vs Predicted AQI graph
+* Correlation Heatmap
+* Scatter plots (AQI vs pollutants)
+
+---
+
+## 🔮 Future Prediction
+
+The model predicts AQI for the **next 5 days** using:
+
+* Previous AQI values (lag features)
+* Latest pollutant levels
+
+---
+
+## 🧠 Key Insights
+
+* PM2.5 has the strongest influence on AQI
+* Past AQI values significantly improve prediction accuracy
+* Random Forest performs well for non-linear environmental data
+
+---
+
+## 🚀 How to Run
+
+1. Upload the dataset:
+
+```python
+from google.colab import files
+files.upload()
+```
+
+2. Run the script in Google Colab
+
+3. View predictions, graphs, and evaluation metrics
+
+---
+
+## 📁 Project Structure
+
+* Dataset (CSV file)
+* Python script / notebook
+* README.md
+
+---
+
+## 🧾 Conclusion
+
+This project demonstrates how machine learning can be used to:
+
+* Analyze air quality trends
+* Predict AQI values
+* Assist in environmental monitoring and forecasting
+
+---
